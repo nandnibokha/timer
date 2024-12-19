@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    .box{
+        position: relative;
+        width: 250px;
+        height:250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .box::before{
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 140%;
+        background: linear-gradient(#00ccff,#d400d4);
+        animation: animate 4s linear infinite;
+    }
+    .box::after{
+        content: '';
+        position: absolute;
+        inset: 4px;
+        background: #0e1538;
+    }
+    h4{
+        font-size: 8em;
+    }
+    span{
+        font-size: 10em;
+        padding-top: 25px;
+    }
+
+    @keyframes animate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<body>
+    <main style="height: 100vh; width: 100%; background-image: linear-gradient(147deg, rgba(132,156,195,1) 0%, rgba(86,88,136,1) 30%, rgba(40,60,121,1) 100%);" class=" d-flex justify-content-center align-items-center">
+        <div class="container d-flex">
+            <div class="d-flex align-items-center">
+                <h3 class="text-white">
+                    Days
+                </h3>
+            </div>
+            <div class="box p-5 m-5">
+                <h4 id="day" class="text-white text-center" style="z-index: 999;">
+                    00
+                </h4>
+            </div>
+            <div class="box p-5 m-5">
+                <h4 id="hrs" class="text-white" style="z-index: 999;">
+                    00
+                </h4>
+            </div>
+            <span class="text-white">:</span>
+            <div class="box p-5 m-5">
+                <h4 id="min" class="text-white" style="z-index: 999;">
+                    00
+                </h4>
+            </div>
+            <span class="text-white">:</span>
+            <div class="box p-5 m-5">
+                <h4 id="sec" class="text-white" style="z-index: 999;">
+                    00
+                </h4>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
